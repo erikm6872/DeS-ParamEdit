@@ -394,8 +394,8 @@ Public Class frmParamEdit
         ReDim paramDef(numEntries - 1)
 
 
-        dgvParams.Columns.Add("ID (Hex)", "ID (Hex)")
-        dgvParams.Columns.Add("ID (Dec)", "ID (Dec)")
+        dgvParams.Columns.Add("ID(Hex)", "ID (Hex)")
+        dgvParams.Columns.Add("ID(Dec)", "ID (Dec)")
 
         For i = 0 To numEntries - 1
             paramType = RAscStr(startOffset + &H40 + (entryLength * i))
@@ -784,16 +784,35 @@ Public Class frmParamEdit
 
 
 
-    'CSV Handling (With | instead of , )
+    'CSV Handling
     Private Sub btnExportCSV_Click(sender As Object, e As EventArgs) Handles btnExportCSV.Click
         Dim entries As New List(Of String)
         Dim str As String
+
+        Dim delimiter As String
+        If commaSeparatedCheckBox.Checked Then
+            delimiter = ","
+        Else
+            delimiter = "|"
+        End If
+
+        If includeHeaderCheckBox.Checked Then
+            str = ""
+            For Each col As DataGridViewColumn In dgvParams.Columns
+                If Not col.Name = "" Then
+                    str = str & col.Name & delimiter
+                End If
+
+            Next
+            entries.Add(str)
+        End If
+
 
         For Each row As DataGridViewRow In dgvParams.Rows
             str = ""
             If Not row.Cells(0).FormattedValue = "" Then
                 For Each cell As DataGridViewCell In row.Cells
-                    str = str & cell.FormattedValue & "|"
+                    str = str & cell.FormattedValue & delimiter
                 Next
                 entries.Add(str)
             End If
@@ -805,18 +824,29 @@ Public Class frmParamEdit
     Private Sub btnImportCSV_Click(sender As Object, e As EventArgs) Handles btnImportCSV.Click
         Dim row As New List(Of String)
 
+        Dim delimiter As String
+        If commaSeparatedCheckBox.Checked Then
+            delimiter = ","
+        Else
+            delimiter = "|"
+        End If
+
         If File.Exists(txtParam.Text & ".csv") Then
             dgvParams.Rows.Clear()
 
             Dim entries = File.ReadAllLines(txtParam.Text & ".csv")
             For Each entry In entries
 
-                For Each cell In entry.Split("|")
+                For Each cell In entry.Split(delimiter)
                     row.Add(cell)
                 Next
                 dgvParams.Rows.Add(row.ToArray)
                 row.Clear()
             Next
+
+            If includeHeaderCheckBox.Checked Then
+                dgvParams.Rows.RemoveAt(0)
+            End If
 
         Else
             MsgBox(txtParam.Text & ".csv not found.")
