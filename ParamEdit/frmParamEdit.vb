@@ -829,8 +829,12 @@ Public Class frmParamEdit
                 row.Clear()
             Next
 
+            If includeHeaderCheckBox.Checked Then
+                dgvParams.Rows.RemoveAt(0)
+            End If
+
         Else
-            MsgBox(txtParam.Text & ".csv not found.")
+                MsgBox(txtParam.Text & ".csv not found.")
         End If
     End Sub
 
