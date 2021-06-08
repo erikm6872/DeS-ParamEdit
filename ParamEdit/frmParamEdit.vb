@@ -394,8 +394,8 @@ Public Class frmParamEdit
         ReDim paramDef(numEntries - 1)
 
 
-        dgvParams.Columns.Add("ID(Hex)", "ID(Hex)")
-        dgvParams.Columns.Add("ID(Dec)", "ID(Dec)")
+        dgvParams.Columns.Add("ID(Hex)", "ID (Hex)")
+        dgvParams.Columns.Add("ID(Dec)", "ID (Dec)")
 
         For i = 0 To numEntries - 1
             paramType = RAscStr(startOffset + &H40 + (entryLength * i))
