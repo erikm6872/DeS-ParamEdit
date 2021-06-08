@@ -42,7 +42,10 @@ Partial Class frmParamEdit
         Me.btnExportCSV = New System.Windows.Forms.Button()
         Me.btnImportCSV = New System.Windows.Forms.Button()
         Me.includeHeaderCheckBox = New System.Windows.Forms.CheckBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.commaSeparatedCheckBox = New System.Windows.Forms.CheckBox()
         CType(Me.dgvParams, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'txtParamdef
@@ -52,7 +55,7 @@ Partial Class frmParamEdit
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtParamdef.Location = New System.Drawing.Point(89, 14)
         Me.txtParamdef.Name = "txtParamdef"
-        Me.txtParamdef.Size = New System.Drawing.Size(440, 20)
+        Me.txtParamdef.Size = New System.Drawing.Size(634, 20)
         Me.txtParamdef.TabIndex = 29
         '
         'lblGAFile
@@ -67,7 +70,7 @@ Partial Class frmParamEdit
         'btnBrowseParamdef
         '
         Me.btnBrowseParamdef.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnBrowseParamdef.Location = New System.Drawing.Point(532, 12)
+        Me.btnBrowseParamdef.Location = New System.Drawing.Point(726, 12)
         Me.btnBrowseParamdef.Name = "btnBrowseParamdef"
         Me.btnBrowseParamdef.Size = New System.Drawing.Size(75, 23)
         Me.btnBrowseParamdef.TabIndex = 30
@@ -81,7 +84,7 @@ Partial Class frmParamEdit
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtParam.Location = New System.Drawing.Point(89, 43)
         Me.txtParam.Name = "txtParam"
-        Me.txtParam.Size = New System.Drawing.Size(440, 20)
+        Me.txtParam.Size = New System.Drawing.Size(634, 20)
         Me.txtParam.TabIndex = 32
         '
         'Label1
@@ -96,7 +99,7 @@ Partial Class frmParamEdit
         'btnBrowseParam
         '
         Me.btnBrowseParam.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnBrowseParam.Location = New System.Drawing.Point(532, 41)
+        Me.btnBrowseParam.Location = New System.Drawing.Point(726, 41)
         Me.btnBrowseParam.Name = "btnBrowseParam"
         Me.btnBrowseParam.Size = New System.Drawing.Size(75, 23)
         Me.btnBrowseParam.TabIndex = 33
@@ -111,15 +114,15 @@ Partial Class frmParamEdit
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgvParams.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText
         Me.dgvParams.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvParams.Location = New System.Drawing.Point(12, 147)
+        Me.dgvParams.Location = New System.Drawing.Point(12, 172)
         Me.dgvParams.Name = "dgvParams"
-        Me.dgvParams.Size = New System.Drawing.Size(595, 463)
+        Me.dgvParams.Size = New System.Drawing.Size(789, 561)
         Me.dgvParams.TabIndex = 36
         '
         'btnOpen
         '
         Me.btnOpen.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnOpen.Location = New System.Drawing.Point(451, 70)
+        Me.btnOpen.Location = New System.Drawing.Point(645, 70)
         Me.btnOpen.Name = "btnOpen"
         Me.btnOpen.Size = New System.Drawing.Size(78, 23)
         Me.btnOpen.TabIndex = 37
@@ -129,7 +132,7 @@ Partial Class frmParamEdit
         'btnSave
         '
         Me.btnSave.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnSave.Location = New System.Drawing.Point(532, 70)
+        Me.btnSave.Location = New System.Drawing.Point(726, 70)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 23)
         Me.btnSave.TabIndex = 38
@@ -151,7 +154,7 @@ Partial Class frmParamEdit
         Me.lblVer.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblVer.AutoSize = True
         Me.lblVer.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblVer.Location = New System.Drawing.Point(531, 128)
+        Me.lblVer.Location = New System.Drawing.Point(725, 153)
         Me.lblVer.Name = "lblVer"
         Me.lblVer.Size = New System.Drawing.Size(76, 13)
         Me.lblVer.TabIndex = 77
@@ -160,7 +163,7 @@ Partial Class frmParamEdit
         'txtParamName
         '
         Me.txtParamName.AllowDrop = True
-        Me.txtParamName.Location = New System.Drawing.Point(89, 125)
+        Me.txtParamName.Location = New System.Drawing.Point(89, 139)
         Me.txtParamName.Name = "txtParamName"
         Me.txtParamName.Size = New System.Drawing.Size(207, 20)
         Me.txtParamName.TabIndex = 79
@@ -168,7 +171,7 @@ Partial Class frmParamEdit
         'lblParamName
         '
         Me.lblParamName.AutoSize = True
-        Me.lblParamName.Location = New System.Drawing.Point(12, 128)
+        Me.lblParamName.Location = New System.Drawing.Point(9, 142)
         Me.lblParamName.Name = "lblParamName"
         Me.lblParamName.Size = New System.Drawing.Size(68, 13)
         Me.lblParamName.TabIndex = 80
@@ -177,7 +180,7 @@ Partial Class frmParamEdit
         'txtUnk0x8
         '
         Me.txtUnk0x8.AllowDrop = True
-        Me.txtUnk0x8.Location = New System.Drawing.Point(341, 125)
+        Me.txtUnk0x8.Location = New System.Drawing.Point(341, 139)
         Me.txtUnk0x8.Name = "txtUnk0x8"
         Me.txtUnk0x8.Size = New System.Drawing.Size(64, 20)
         Me.txtUnk0x8.TabIndex = 81
@@ -185,7 +188,7 @@ Partial Class frmParamEdit
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(305, 128)
+        Me.Label2.Location = New System.Drawing.Point(299, 142)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(36, 13)
         Me.Label2.TabIndex = 82
@@ -194,7 +197,7 @@ Partial Class frmParamEdit
         'txtUnk0x6
         '
         Me.txtUnk0x6.AllowDrop = True
-        Me.txtUnk0x6.Location = New System.Drawing.Point(341, 99)
+        Me.txtUnk0x6.Location = New System.Drawing.Point(341, 113)
         Me.txtUnk0x6.Name = "txtUnk0x6"
         Me.txtUnk0x6.Size = New System.Drawing.Size(64, 20)
         Me.txtUnk0x6.TabIndex = 83
@@ -202,7 +205,7 @@ Partial Class frmParamEdit
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(305, 102)
+        Me.Label3.Location = New System.Drawing.Point(299, 115)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(36, 13)
         Me.Label3.TabIndex = 84
@@ -211,7 +214,7 @@ Partial Class frmParamEdit
         'btnExportCSV
         '
         Me.btnExportCSV.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnExportCSV.Location = New System.Drawing.Point(532, 99)
+        Me.btnExportCSV.Location = New System.Drawing.Point(87, 19)
         Me.btnExportCSV.Name = "btnExportCSV"
         Me.btnExportCSV.Size = New System.Drawing.Size(75, 23)
         Me.btnExportCSV.TabIndex = 86
@@ -221,7 +224,7 @@ Partial Class frmParamEdit
         'btnImportCSV
         '
         Me.btnImportCSV.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnImportCSV.Location = New System.Drawing.Point(454, 99)
+        Me.btnImportCSV.Location = New System.Drawing.Point(6, 19)
         Me.btnImportCSV.Name = "btnImportCSV"
         Me.btnImportCSV.Size = New System.Drawing.Size(75, 23)
         Me.btnImportCSV.TabIndex = 85
@@ -231,21 +234,42 @@ Partial Class frmParamEdit
         'includeHeaderCheckBox
         '
         Me.includeHeaderCheckBox.AutoSize = True
-        Me.includeHeaderCheckBox.Location = New System.Drawing.Point(444, 129)
+        Me.includeHeaderCheckBox.Location = New System.Drawing.Point(6, 48)
         Me.includeHeaderCheckBox.Name = "includeHeaderCheckBox"
         Me.includeHeaderCheckBox.Size = New System.Drawing.Size(104, 17)
         Me.includeHeaderCheckBox.TabIndex = 87
         Me.includeHeaderCheckBox.Text = "Include Headers"
         Me.includeHeaderCheckBox.UseVisualStyleBackColor = True
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.commaSeparatedCheckBox)
+        Me.GroupBox1.Controls.Add(Me.includeHeaderCheckBox)
+        Me.GroupBox1.Controls.Add(Me.btnImportCSV)
+        Me.GroupBox1.Controls.Add(Me.btnExportCSV)
+        Me.GroupBox1.Location = New System.Drawing.Point(411, 70)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(200, 96)
+        Me.GroupBox1.TabIndex = 89
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "CSV Options"
+        '
+        'commaSeparatedCheckBox
+        '
+        Me.commaSeparatedCheckBox.AutoSize = True
+        Me.commaSeparatedCheckBox.Location = New System.Drawing.Point(6, 71)
+        Me.commaSeparatedCheckBox.Name = "commaSeparatedCheckBox"
+        Me.commaSeparatedCheckBox.Size = New System.Drawing.Size(113, 17)
+        Me.commaSeparatedCheckBox.TabIndex = 88
+        Me.commaSeparatedCheckBox.Text = "Comma Separated"
+        Me.commaSeparatedCheckBox.UseVisualStyleBackColor = True
+        '
         'frmParamEdit
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(617, 618)
-        Me.Controls.Add(Me.includeHeaderCheckBox)
-        Me.Controls.Add(Me.btnExportCSV)
-        Me.Controls.Add(Me.btnImportCSV)
+        Me.ClientSize = New System.Drawing.Size(811, 741)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.txtUnk0x6)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtUnk0x8)
@@ -265,8 +289,10 @@ Partial Class frmParamEdit
         Me.Controls.Add(Me.btnBrowseParamdef)
         Me.Name = "frmParamEdit"
         Me.Text = "Wulf's Souls Series Parameter Editor"
-        CType(Me.dgvParams,System.ComponentModel.ISupportInitialize).EndInit
-        Me.ResumeLayout(false)
+        CType(Me.dgvParams, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.ResumeLayout(False)
         Me.PerformLayout
 
 End Sub
@@ -290,4 +316,6 @@ End Sub
     Friend WithEvents btnExportCSV As Button
     Friend WithEvents btnImportCSV As Button
     Friend WithEvents includeHeaderCheckBox As CheckBox
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents commaSeparatedCheckBox As CheckBox
 End Class
