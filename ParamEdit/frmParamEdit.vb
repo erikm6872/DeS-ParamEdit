@@ -789,6 +789,17 @@ Public Class frmParamEdit
         Dim entries As New List(Of String)
         Dim str As String
 
+        If includeHeaderCheckBox.Checked Then
+            str = ""
+            For Each col As DataGridViewColumn In dgvParams.Columns
+                ' Not col.Name == "" Then
+                str = str & col.Name & "|"
+
+            Next
+            entries.Add(str)
+        End If
+
+
         For Each row As DataGridViewRow In dgvParams.Rows
             str = ""
             If Not row.Cells(0).FormattedValue = "" Then
